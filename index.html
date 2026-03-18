@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rahul Mondal | Certified Industrial Accountant | ICA Education</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #0a0c10;
+    --surface: #111318;
+    --surface2: #1a1d24;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: rgba(201,168,76,0.15);
+    --text: #e8e6e0;
+    --muted: #7a7872;
+    --border: rgba(201,168,76,0.2);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(10,12,16,0.88);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    text-decoration: none;
+  }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 650px; height: 650px;
+    background: radial-gradient(circle, rgba(201,168,76,0.09) 0%, transparent 70%);
+    top: -120px; right: -80px;
+    pointer-events: none;
+    animation: pulse 6s ease-in-out infinite;
+  }
+
+  .hero-glow2 {
+    position: absolute;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(74,158,255,0.06) 0%, transparent 70%);
+    bottom: 60px; left: 80px;
+    pointer-events: none;
+    animation: pulse 9s ease-in-out infinite reverse;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.65; }
+  }
+
+  .hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--gold-dim);
+    border: 1px solid var(--border);
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.1rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+  }
+
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .hero-name span { color: var(--gold); display: block; }
+
+  .hero-title {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin: 1.5rem 0 2.5rem;
+    font-weight: 400;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-title strong { color: var(--text); font-weight: 600; }
+
+  .hero-title-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-title-pill::before {
+    content: '▸';
+    color: var(--gold);
+    font-size: 0.65rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: #0a0c10;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 2.2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(201,168,76,0.35);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 2.2rem;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    background: var(--gold-dim);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3.5rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.8s 0.6s ease both;
+    flex-wrap: wrap;
+  }
+
+  .stat-item { display: flex; flex-direction: column; gap: 0.3rem; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 4rem; position: relative; z-index: 1; }
+
+  .section-header { max-width: 1100px; margin: 0 auto 4rem; }
+
+  .section-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .section-tag::after {
+    content: '';
+    height: 1px;
+    width: 40px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  /* ABOUT */
+  .about-section { background: var(--surface); }
+
+  .about-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+    font-size: 1.02rem;
+  }
+
+  .about-text p strong { color: var(--text); }
+
+  .about-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .institute-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+  }
+
+  .institute-sub { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+
+  .course-tag {
+    display: inline-block;
+    background: var(--gold-dim);
+    border: 1px solid var(--border);
+    color: var(--gold-light);
+    font-size: 0.76rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 1.75rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+
+  .module-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+
+  .module-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+
+  .module-list li::before { content: '▸'; color: var(--gold); font-size: 0.65rem; }
+
+  /* SKILLS */
+  .skills-section { background: var(--bg); }
+
+  .skills-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+  }
+
+  .skill-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 22px 65px rgba(0,0,0,0.45), 0 0 30px rgba(201,168,76,0.08);
+  }
+
+  .skill-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--gold);
+    transition: width 0.45s ease;
+  }
+
+  .skill-card:hover::after { width: 100%; }
+
+  .skill-icon { font-size: 2.6rem; margin-bottom: 1.25rem; display: block; }
+  .skill-name { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+  .skill-category { font-size: 0.72rem; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; font-family: 'DM Mono', monospace; margin-bottom: 1rem; }
+  .skill-desc { color: var(--muted); font-size: 0.91rem; line-height: 1.75; margin-bottom: 1.5rem; }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .skill-tag {
+    background: var(--surface2);
+    border: 1px solid rgba(201,168,76,0.1);
+    color: var(--muted);
+    font-size: 0.73rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+    transition: all 0.2s;
+  }
+
+  .skill-card:hover .skill-tag { border-color: rgba(201,168,76,0.25); color: var(--text); }
+
+  /* PROFICIENCY */
+  .prof-section {
+    max-width: 1100px;
+    margin: 4rem auto 0;
+    padding-top: 4rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .prof-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 2rem; color: var(--text); }
+
+  .prof-bar { margin-bottom: 1.65rem; }
+
+  .prof-bar-header { display: flex; justify-content: space-between; margin-bottom: 0.55rem; }
+  .prof-bar-label { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+  .prof-bar-pct { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--gold); }
+
+  .prof-bar-track { height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
+
+  .prof-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2px;
+    width: 0;
+    transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* EDUCATION */
+  .education-section { background: var(--surface); }
+
+  .edu-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .edu-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.2rem;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .edu-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
+
+  .edu-card.featured {
+    grid-column: 1 / -1;
+    background: var(--surface2);
+    border-color: var(--gold);
+  }
+
+  .edu-card.featured::before {
+    content: '★ PRIMARY QUALIFICATION';
+    position: absolute;
+    top: -1px; right: 2rem;
+    background: var(--gold);
+    color: #0a0c10;
+    font-size: 0.62rem;
+    font-weight: 700;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.85rem;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .edu-year { font-family: 'DM Mono', monospace; font-size: 0.73rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+  .edu-degree { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem; }
+  .edu-school { font-size: 0.88rem; color: var(--muted); margin-bottom: 1rem; }
+
+  .edu-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+  .edu-tag {
+    background: var(--gold-dim);
+    border: 1px solid var(--border);
+    color: var(--gold-light);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* PROJECTS */
+  .projects-section { background: var(--bg); }
+
+  .projects-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    transition: all 0.35s;
+    overflow: hidden;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201,168,76,0.38);
+    box-shadow: 0 22px 55px rgba(0,0,0,0.55);
+  }
+
+  .project-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: rgba(201,168,76,0.07);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+  }
+
+  .project-card:hover .project-num { color: rgba(201,168,76,0.14); }
+
+  .project-name { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+  .project-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
+  .project-tech { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--gold); letter-spacing: 0.05em; }
+
+  /* CONTACT */
+  .contact-section { background: var(--surface); }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .contact-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-headline span { color: var(--gold); }
+
+  .contact-text { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; }
+
+  .contact-info { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+
+  .contact-item:hover { border-color: rgba(201,168,76,0.4); transform: translateX(6px); }
+
+  .contact-icon { font-size: 1.2rem; width: 2.2rem; text-align: center; flex-shrink: 0; }
+  .contact-detail { display: flex; flex-direction: column; gap: 0.12rem; }
+  .contact-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Mono', monospace; }
+  .contact-value { font-size: 0.9rem; color: var(--text); font-weight: 500; word-break: break-all; }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-brand { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1rem; }
+  .footer-copy { font-size: 0.78rem; color: var(--muted); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { gap: 1.5rem; }
+    section { padding: 4rem 2rem; }
+    .hero { padding: 7rem 2rem 4rem; }
+    .about-grid, .edu-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .edu-card.featured { grid-column: 1; }
+    footer { padding: 1.5rem 2rem; flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .hero-stats { gap: 2rem; }
+  }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Rahul Mondal</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Open to Opportunities · Kolkata, West Bengal</div>
+    <h1 class="hero-name">
+      Rahul
+      <span>Mondal.</span>
+    </h1>
+    <div class="hero-title">
+      <span class="hero-title-pill"><strong>Certified Industrial Accountant</strong></span>
+      <span class="hero-title-pill">Financial Reporting</span>
+      <span class="hero-title-pill">Taxation Expert</span>
+      <span class="hero-title-pill">Tally Prime & ERP</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Hire Me</a>
+      <a href="#skills" class="btn-outline">View My Skills</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">4+</span>
+        <span class="stat-label">Core Modules</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">CIA</span>
+        <span class="stat-label">Certification</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">ICA</span>
+        <span class="stat-label">Education</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">B.Com</span>
+        <span class="stat-label">Calcutta Univ.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-header reveal">
+    <div class="section-tag">01 &nbsp; About Me</div>
+    <h2 class="section-title">A Passionate Accounting<br>Professional in the Making</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        Hi, I'm <strong>Rahul Mondal</strong> — a dedicated commerce graduate from
+        <strong>Sammilani Mahavidyalaya, University of Calcutta</strong>, and a current student
+        of the <strong>Certified Industrial Accountant (CIA)</strong> program at
+        <strong>ICA Education, Kolkata</strong>.
+      </p>
+      <p>
+        My training covers the full spectrum of modern accounting practice —
+        <strong>Advanced Excel</strong> for financial analysis and MIS reporting,
+        <strong>Tally Prime</strong> for end-to-end ERP accounting, and in-depth knowledge
+        of <strong>Direct Tax (Income Tax Act)</strong> and <strong>GST compliance</strong>
+        frameworks as applicable in India.
+      </p>
+      <p>
+        I am driven by precision, regulatory compliance, and a commitment to delivering
+        accurate financial work. I am actively seeking opportunities where I can apply my
+        skills, grow professionally, and contribute meaningfully to an organization's
+        financial health.
+      </p>
+      <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="mailto:rahul7733mondal@gmail.com" class="btn-primary">Get In Touch</a>
+        <a href="#skills" class="btn-outline">My Skill Set</a>
+      </div>
+    </div>
+    <div class="about-card reveal">
+      <div class="institute-logo">ICA Education</div>
+      <div class="institute-sub">Institute of Computer Accountants · Kolkata</div>
+      <div class="course-tag">CIA — Certified Industrial Accountant</div>
+      <ul class="module-list">
+        <li>Advanced Microsoft Excel</li>
+        <li>Tally Prime (ERP Accounting Software)</li>
+        <li>Direct Tax — Income Tax Act, 1961</li>
+        <li>GST — Goods &amp; Services Tax</li>
+        <li>Financial Accounting Principles</li>
+        <li>Payroll Processing</li>
+        <li>Business &amp; Corporate Communication</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="section-header reveal">
+    <div class="section-tag">02 &nbsp; Core Skills</div>
+    <h2 class="section-title">Technical Expertise<br>Built for Industry</h2>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <span class="skill-icon">📊</span>
+      <div class="skill-name">Advanced Excel</div>
+      <div class="skill-category">Data Analysis &amp; MIS Reporting</div>
+      <p class="skill-desc">
+        Skilled in building dynamic financial dashboards, automated MIS reports,
+        and data-driven models using Excel's full analytical power — from formulas
+        to Pivot Tables and data validation.
+      </p>
+      <div class="skill-tags">
+        <span class="skill-tag">VLOOKUP / XLOOKUP</span>
+        <span class="skill-tag">Pivot Tables</span>
+        <span class="skill-tag">IF / SUMIF / COUNTIF</span>
+        <span class="skill-tag">Charts &amp; Graphs</span>
+        <span class="skill-tag">Data Validation</span>
+        <span class="skill-tag">Conditional Formatting</span>
+        <span class="skill-tag">Macros (Basic)</span>
+        <span class="skill-tag">MIS Reports</span>
+        <span class="skill-tag">Financial Modelling</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <span class="skill-icon">🏢</span>
+      <div class="skill-name">Tally Prime</div>
+      <div class="skill-category">ERP &amp; Accounting Software</div>
+      <p class="skill-desc">
+        Hands-on experience with complete accounting cycles in Tally Prime —
+        from ledger management and voucher entry to financial statements,
+        inventory management, GST filing, and payroll.
+      </p>
+      <div class="skill-tags">
+        <span class="skill-tag">Ledger Creation</span>
+        <span class="skill-tag">Voucher Entry</span>
+        <span class="skill-tag">Bank Reconciliation</span>
+        <span class="skill-tag">Inventory Mgmt</span>
+        <span class="skill-tag">GST in Tally</span>
+        <span class="skill-tag">Financial Reports</span>
+        <span class="skill-tag">Payroll</span>
+        <span class="skill-tag">TDS in Tally</span>
+        <span class="skill-tag">P&amp;L / Balance Sheet</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <span class="skill-icon">📑</span>
+      <div class="skill-name">Direct Tax</div>
+      <div class="skill-category">Income Tax Compliance — India</div>
+      <p class="skill-desc">
+        Solid understanding of the Income Tax Act, 1961 — including computation
+        of total income under all heads, Chapter VI-A deductions, TDS provisions,
+        advance tax, and ITR filing procedures.
+      </p>
+      <div class="skill-tags">
+        <span class="skill-tag">Income Tax Act, 1961</span>
+        <span class="skill-tag">ITR Filing</span>
+        <span class="skill-tag">TDS / TCS</span>
+        <span class="skill-tag">Chapter VI-A</span>
+        <span class="skill-tag">Advance Tax</span>
+        <span class="skill-tag">Tax Computation</span>
+        <span class="skill-tag">Form 16</span>
+        <span class="skill-tag">Deductions (80C–80U)</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <span class="skill-icon">🧾</span>
+      <div class="skill-name">GST</div>
+      <div class="skill-category">Goods &amp; Services Tax — India</div>
+      <p class="skill-desc">
+        Comprehensive knowledge of India's GST framework — registration,
+        GST-compliant invoicing, input tax credit reconciliation, monthly/quarterly
+        returns (GSTR-1, GSTR-3B), e-way bills, and annual returns.
+      </p>
+      <div class="skill-tags">
+        <span class="skill-tag">GST Registration</span>
+        <span class="skill-tag">GSTR-1</span>
+        <span class="skill-tag">GSTR-3B</span>
+        <span class="skill-tag">Input Tax Credit</span>
+        <span class="skill-tag">E-Invoice</span>
+        <span class="skill-tag">E-Way Bill</span>
+        <span class="skill-tag">Annual Return</span>
+        <span class="skill-tag">RCM</span>
+        <span class="skill-tag">GST Reconciliation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="prof-section reveal">
+    <h3 class="prof-title">Proficiency Levels</h3>
+    <div class="prof-bar">
+      <div class="prof-bar-header"><span class="prof-bar-label">Advanced Excel</span><span class="prof-bar-pct">85%</span></div>
+      <div class="prof-bar-track"><div class="prof-bar-fill" data-width="85"></div></div>
+    </div>
+    <div class="prof-bar">
+      <div class="prof-bar-header"><span class="prof-bar-label">Tally Prime</span><span class="prof-bar-pct">82%</span></div>
+      <div class="prof-bar-track"><div class="prof-bar-fill" data-width="82"></div></div>
+    </div>
+    <div class="prof-bar">
+      <div class="prof-bar-header"><span class="prof-bar-label">Direct Tax (Income Tax)</span><span class="prof-bar-pct">78%</span></div>
+      <div class="prof-bar-track"><div class="prof-bar-fill" data-width="78"></div></div>
+    </div>
+    <div class="prof-bar">
+      <div class="prof-bar-header"><span class="prof-bar-label">GST</span><span class="prof-bar-pct">80%</span></div>
+      <div class="prof-bar-track"><div class="prof-bar-fill" data-width="80"></div></div>
+    </div>
+    <div class="prof-bar">
+      <div class="prof-bar-header"><span class="prof-bar-label">Financial Accounting</span><span class="prof-bar-pct">75%</span></div>
+      <div class="prof-bar-track"><div class="prof-bar-fill" data-width="75"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education-section" id="education">
+  <div class="section-header reveal">
+    <div class="section-tag">03 &nbsp; Education</div>
+    <h2 class="section-title">Academic &amp;<br>Professional Background</h2>
+  </div>
+  <div class="edu-grid">
+
+    <div class="edu-card featured reveal">
+      <div class="edu-year">CURRENT · 2024 – 2025</div>
+      <div class="edu-degree">Certified Industrial Accountant (CIA)</div>
+      <div class="edu-school">ICA Education · Kolkata, West Bengal</div>
+      <div class="edu-tags">
+        <span class="edu-tag">Advanced Excel</span>
+        <span class="edu-tag">Tally Prime</span>
+        <span class="edu-tag">Direct Tax</span>
+        <span class="edu-tag">GST</span>
+        <span class="edu-tag">Payroll</span>
+        <span class="edu-tag">Financial Reporting</span>
+        <span class="edu-tag">ERP Accounting</span>
+      </div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-year">Graduated</div>
+      <div class="edu-degree">Bachelor of Commerce (B.Com)</div>
+      <div class="edu-school">Sammilani Mahavidyalaya · University of Calcutta</div>
+      <div class="edu-tags">
+        <span class="edu-tag">Accountancy</span>
+        <span class="edu-tag">Economics</span>
+        <span class="edu-tag">Business Law</span>
+        <span class="edu-tag">Taxation</span>
+      </div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-year">Higher Secondary (12th)</div>
+      <div class="edu-degree">Class XII — Commerce Stream</div>
+      <div class="edu-school">West Bengal Council of Higher Secondary Education (WBCHSE)</div>
+      <div class="edu-tags">
+        <span class="edu-tag">Accounts</span>
+        <span class="edu-tag">Economics</span>
+        <span class="edu-tag">Business Studies</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="section-header reveal">
+    <div class="section-tag">04 &nbsp; Practice Work</div>
+    <h2 class="section-title">Projects &amp;<br>Practical Exercises</h2>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-num">01</div>
+      <div class="project-name">Business Financial Dashboard (Excel)</div>
+      <p class="project-desc">Built a dynamic MIS dashboard with Pivot Tables, slicers, and charts for monthly income/expense tracking and financial reporting of a mock trading firm.</p>
+      <div class="project-tech">Excel · Pivot Tables · Charts · SUMIF · Conditional Formatting</div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">02</div>
+      <div class="project-name">Full-Year Accounting in Tally Prime</div>
+      <p class="project-desc">Maintained complete books of accounts for a sample company — from journal entries and ledgers to trial balance, P&amp;L, and Balance Sheet in Tally Prime.</p>
+      <div class="project-tech">Tally Prime · Ledger · Vouchers · Trial Balance · Final Accounts</div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">03</div>
+      <div class="project-name">Individual Income Tax Computation</div>
+      <p class="project-desc">Computed taxable income for individuals under all five heads, applied Chapter VI-A deductions (80C, 80D), and calculated net tax liability with TDS adjustment.</p>
+      <div class="project-tech">Income Tax Act · ITR · TDS · 80C/80D · Tax Slab Calculation</div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">04</div>
+      <div class="project-name">GST Returns Filing Practice</div>
+      <p class="project-desc">Practiced end-to-end GST compliance — GST-compliant invoice generation, ITC reconciliation, preparation of GSTR-1 and GSTR-3B, and monthly closing.</p>
+      <div class="project-tech">GST · GSTR-1 · GSTR-3B · ITC Matching · E-Invoice</div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">05</div>
+      <div class="project-name">Payroll Processing &amp; Salary Sheet</div>
+      <p class="project-desc">Processed end-to-end payroll for a mock organization in Excel — gross/net salary computation, PF &amp; ESI deductions, TDS on salary, and pay slip generation.</p>
+      <div class="project-tech">Excel · Payroll · PF · ESI · TDS · Pay Slip</div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">06</div>
+      <div class="project-name">Bank Reconciliation Statement (BRS)</div>
+      <p class="project-desc">Prepared BRS for a sample firm to identify, classify, and reconcile differences between the cash book and bank passbook using both Tally Prime and Excel.</p>
+      <div class="project-tech">Tally Prime · Excel · BRS · Cash Book · Passbook</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-tag">05 &nbsp; Contact</div>
+      <h2 class="contact-headline">Let's Work<br><span>Together.</span></h2>
+      <p class="contact-text">
+        I am actively looking for entry-level opportunities in accounting, finance,
+        taxation, and ERP operations. If you are a recruiter, employer, or fellow
+        finance professional — I'd love to connect and explore how I can add
+        value to your team.
+      </p>
+      <a href="mailto:rahul7733mondal@gmail.com" class="btn-primary">Send Me an Email</a>
+    </div>
+    <div class="contact-info reveal">
+
+      <a href="mailto:rahul7733mondal@gmail.com" class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div class="contact-detail">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">rahul7733mondal@gmail.com</span>
+        </div>
+      </a>
+
+      <a href="tel:+918392025732" class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div class="contact-detail">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">+91 83920 25732</span>
+        </div>
+      </a>
+
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-detail">
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Kolkata, West Bengal, India</span>
+        </div>
+      </div>
+
+      <a href="https://www.linkedin.com/in/rahul-mondal-33015b260" target="_blank" class="contact-item">
+        <div class="contact-icon">💼</div>
+        <div class="contact-detail">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/rahul-mondal-33015b260</span>
+        </div>
+      </a>
+
+      <div class="contact-item">
+        <div class="contact-icon">🎓</div>
+        <div class="contact-detail">
+          <span class="contact-label">Institute</span>
+          <span class="contact-value">ICA Education · CIA Program · Kolkata</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Rahul Mondal · CIA Portfolio</div>
+  <div class="footer-copy">© 2025 · Certified Industrial Accountant · ICA Education, Kolkata</div>
+</footer>
+
+<script>
+  // Scroll Reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Proficiency Bars
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.prof-bar-fill').forEach(fill => {
+          const w = fill.getAttribute('data-width');
+          setTimeout(() => { fill.style.width = w + '%'; }, 200);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const profSection = document.querySelector('.prof-section');
+  if (profSection) barObserver.observe(profSection);
+</script>
+</body>
+</html>
